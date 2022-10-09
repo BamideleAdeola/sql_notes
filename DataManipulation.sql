@@ -787,3 +787,6 @@ WHERE
 ORDER BY 
 	similarity(title, description) DESC;
 ----
+
+-- ILIKE OPERATOR
+--Just like the LIKE operator, it is used to query data using patterns matching techniques but case-insensitive
