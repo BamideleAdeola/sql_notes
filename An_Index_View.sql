@@ -1,4 +1,4 @@
--- Creating a an indexed view
+-- Creating  an indexed view
 
 USE KinetEcoDW
 GO
