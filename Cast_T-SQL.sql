@@ -1,3 +1,5 @@
+-- CAST() in T-SQL
+
 SELECT CAST(38.75 AS int) AS Convert_to_int; -- decimal or float to integer Got truncated. removing the decimal points
 GO
 
