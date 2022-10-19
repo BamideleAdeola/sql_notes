@@ -1,0 +1,21 @@
+#SQL #DENSE_RANK Function.
+The DENSE_RANK() function is used to assign a rank to each row within a partition of a result set, with no gaps in ranking values. As against the RANK() function, the DENSE_RANK() function always returns consecutive rank values.
+
+It is applied to every row in each partition defined by the PARTITION BY clause, in the sort order specified by the ORDER BY clause.
+The #DENSE_RANK function resets the rank when crossing the partition boundary. Although, the PARTITION BY clause is optional. 
+If you skip it, the #DENSE_RANK() function will treat the whole result set as a single partition.
+To put it in a clearer context, 
+#RANK: Returns the rank of each row within the partition of a result set.
+#DENSE_RANK: Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
+I have created a sample datasets of 10 rows of data for this purpose just to differentiate RANK and DENSE_RANK. I will write on #ROW_Number next.
+
+--comparing #Rank() and #Desne_rank() function
+SELECT *, 
+RANK () OVER (PARTITION BY FD_group ORDER BY fd_price) AS ranks,
+DENSE_RANK () OVER (PARTITION BY fd_group ORDER BY fd_price) AS dense_ranks
+FROM foods;
+You can better understand the difference from the output. See snapshots. 
+#Please, I welcome #comments and inputs as I am also still learning.
+Follow for more >>>
+#LinkedIn : https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a

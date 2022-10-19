@@ -1,0 +1,46 @@
+#SQL RANK() #Function
+
+The #RANK function is also a sub-part of window functions, where we also have #Row_Number and #Dense_Rank.
+
+As the name suggests, the rank function #assigns rank to all the rows within every partition. 
+
+Rank is assigned such that rank 1 given to the first row and rows having same value are assigned same rank unlike the #DENSE_RANK(). 
+
+Therefore, this function does not always assign the ranking of rows in #consecutive #order. It usually skip rows where there are same ranks.
+
+Pay attention to the following points:
+- It always works with the OVER() clause.
+- It assigns a rank to each row based on the ORDER BY clause.
+- It assigns a rank to each row in consecutive order.
+- It always assigns a rank to rows, starting with one for each new partition
+
+I used #fortune500 #dataset and #PostgreSQL for a better understanding here. 
+
+Trying to solve a simple challenge of: 
+a. Retrieving ranks of fortune500 Companies in Fortune500 table according to their revenue within each sector. i.e #without #partition
+b. Retrieve rank of fortune500 #Companies in Fortune500 table according to their revenue within each sector and partitioned by sector.
+
+#-- Find rank of fortune500 Companies in Fortune500 table according to revenue within each sector. 
+SELECT 
+title AS company, 
+revenues AS coy_revenue,
+sector,
+RANK() OVER(ORDER BY revenues DESC) AS Rankings -- This ranks without any partition.
+FROM fortune500
+WHERE revenues IS NOT NULL;
+
+#-- Find rank of fortune500 Companies in Fortune500 table according to revenue within each sector and partition by sector. 
+SELECT 
+title AS company, 
+revenues AS coy_revenue,
+sector,
+RANK() OVER(PARTITION BY sector ORDER BY revenues DESC) AS Rankings -- This ranks without any partition.
+FROM fortune500
+WHERE revenues IS NOT NULL;
+
+You can read further from here. I hope this helps. 
+#dataanalytics #googleanalytics #microsoftpowerbi #databasequeries
+
+Twitter: https://lnkd.in/d3xKHuwM
+
+LinkedIn: https://lnkd.in/dJzSUWQF
