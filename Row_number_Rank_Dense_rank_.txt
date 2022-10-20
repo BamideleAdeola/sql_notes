@@ -1,0 +1,19 @@
+#SQL Row_Number() Function.
+If you are interested in knowing the total rows in your dataset by numbering them irrespective of ties, Then Row_number is a banger.
+ROW_NUMBER and RANK are similar.ROW_NUMBER numbers all rows sequentially (e.g 1, 2, 3, 4, 5). 
+RANK provides the same numeric value for ties (e.g 1, 2, 2, 4, 5).
+Using our previous datasets on foods, let's combine Row_number, RANK and DENSE_Rank function.
+When you omit the partition by clause, then you want to rank or find the row numbers of the entire dataset.
+I have attached two snapshots of when Partition BY clause was introduced and not introduced in the query for better clarity. 
+Trust you find this useful. 
+
+In summary,
+RANK = 2 people came 1st (by scoring 90 each), then the next is 3rd (Scores 85).
+DENSE_RANK = 2 people came 1st (by scoring 90 each), then the next is 2nd (Scores 85).
+ROW_NUMBER = 2 people came 1st (by scoring 90 each), they are numbered 1, 2 and the 3rd. Just normal numbering irrespective of ties.
+
+Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, comment and like to help someone somewhere. We are in this journey together.
+
+#LinkedIn: https://www.linkedin.com/in/bamideleajamu/
+#Twitter: https://twitter.com/delumba1
