@@ -1,0 +1,18 @@
+#question : How can I perform Quartiles, percentiles, etc in #SQL
+#SQL #NTILE() Function.
+If your intention is to group rows of datasets into different groups like Quartile, percentile, etc. 
+The Ntile function can be used in this regard.
+This function is used to distribute rows of an ordered partition into a pre-defined number 👎 of approximately equal groups. 
+Each row group gets its rank based on the defined condition and starts numbering from one group. 
+It assigns a bucket number for every row in a group representing the group to which it belongs.
+Using our previous datasets on foods, let's dive into rows grouping.
+The challenge here is to group the data into 4 different groups. i.e Quartile based on the price.
+--NTILE() function for a quartile
+SELECT fd_name AS food, fd_price As price,
+ NTILE (4) OVER (ORDER BY fd_price DESC) AS quartile
+FROM foods;
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, comment and like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://www.linkedin.com/in/bamideleajamu/
+#Twitter: https://twitter.com/delumba1
