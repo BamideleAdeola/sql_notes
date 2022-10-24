@@ -1,0 +1,10 @@
+#question : How Do I change current date and time to a character data type and display it in ISO 8601 format.
+#SQL #SERVER #CONVERT() Function.
+In SQL Server (Transact-SQL), the CONVERT function converts an expression from one datatype to another datatype. 
+If the conversion fails, the function will return an error. Otherwise, it will return the converted value.
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, comment and like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://www.linkedin.com/in/bamideleajamu/
+#Twitter: https://twitter.com/delumba1
