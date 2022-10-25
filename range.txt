@@ -1,0 +1,17 @@
+#question : Calculae the #RANGE of price column from the table foods using SQL. 
+#SQL #MAX, #MIN() Function.
+Currently, there is no direct way to calculate a range in both fundamental excel and SQL. 
+However, by understanding of the concept of range in statistics, one can pull this through by using different functions.
+Range in statistics is simply the difference between the highest and lowest values in a set of data.
+Hence, to compute a range, use can subtract #MIN() Function (Lowest value) from #MAX() function (Highest value). ANd there you have a range.
+I have created a simple dataset for this purpose called the foods table with 3 columns: fd_group, fd_name, fd_price
+I have also attached output as a snaptshot of both the entire table and the range.
+
+SELECT MAX(fd_price) - MIN(fd_price) AS range
+FROM foods;
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://www.linkedin.com/in/bamideleajamu/
+#Twitter: https://twitter.com/delumba1
