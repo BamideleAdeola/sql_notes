@@ -1,7 +1,12 @@
 #QUESTION : #Calculate the #MEAN and #MEDIAN of price column from the table foods using SQL. 
 #SQL #Median
 I haven't seen a direct way to compute median in SQL. Most of the methods were either somewhat difficult or not code friendly.
-However, with the #PERCENTILE_CONT() Function in PostgreSQL with a WITHIN GROUP, you can have your median without a fuss.
+However, with the #PERCENTILE_CONT() Function in #PostgreSQL with a WITHIN GROUP, you can have your median without a fuss.
+Traditionally, median is the middle value of an array arranged in either ascending or descending order. 
+The within group clause, percentile_cont function and ordering ascending order based on the price column would solve this challenge.
+There were 10 entries in the dataset and 2 middle values, which are 70 and 65. By default, the median would be average of these values. 
+Hence, the query returned 67.5, which is the correct value for median.
+
 How are you computing your own median? See screenshot.
 
 SELECT
