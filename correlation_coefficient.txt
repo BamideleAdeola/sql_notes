@@ -1,0 +1,43 @@
+#QUESTION : #Calculate the correlation coefficient for the relation between x and y
+This was the question I got sometimes back in my SQL journey. 
+Fortunately for me I was using PostgreSQL and SQL Server (T-SQL). 
+But then, I had to use google a bit. My surprise was that PostgreSQL has a function #CORR and I couldn't find it on SQL Server. 
+#CORR is supported by 
+- PostgreSQL
+- Oracle
+Not supported by
+-MySQL
+-MS-SQL
+-Sqlite 
+
+Please do not be confused, first of, just understand the statistics concept and its usage. 
+
+Personally, I termed correlation as the #DEGREE of #relationship. i.e the strength of relationship. 
+
+How strong are two or more variables related. So it ranges between -1<= corr <= 1
+
+a value of 1 for a perfect correlation. 
+a value of 0 for no correlation.
+a value of -1 for a perfect negative correlation 
+
+Hence, there could be a weak relationship or correlation and strong correlation between 2 variables. 
+
+I have curated a simple dataset I got online for this exercise and also used SQL Server and PostgreSQL for the solution.
+
+--#SQL Server
+ SELECT (Avg(x * y) - (Avg(x) * Avg(y))) / (StDevP(x) * StDevP(y)) AS Pearsons_corr
+  FROM correlation;
+
+--#PostgreSQL
+SELECT 
+  CORR (x, y)
+FROM correlation;
+
+Currently, how do you calculate correlation coefficient from your end. Let me get your thoughts on the chat box.
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect

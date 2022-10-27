@@ -1,0 +1,17 @@
+touch app.py (this adds a python file)
+
+ls (list available files in a branch or master)
+git init
+git add . - add all changes to be saved
+git add *filename* - add single file to be saved
+git commit -m 'commit message' - save changes with message
+git push origin master -  (push changes to github master)
+git push origin new-branch (push changes to github new branch)
+git pull origin master -  (pull changes from github master)
+git checkout -b new_branch (creates a new branch)
+git status - check status of changes
+git log - see all previous saved changes (to get the commits)
+git checkout *commit hash* - travel back to old commit
+git clone <clone>
+
+
