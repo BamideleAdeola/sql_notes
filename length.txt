@@ -1,16 +1,30 @@
-#QUESTION : # Returns the first_name and the length of first_name ( how many characters contain in the first name ) from the employees where the length of first_name is more than 7.
+#QUESTION : #Returns #DISTINCT country name and its #length (how many characters contain in the country column) from the envision table where the length of country is more than 8.
 
+If you are a fan of #excel, the above challenge should not be difficult to attempt. 
+I worked on a project back then where we had to validate phone nos. 
+@Rasheed can attest to that. Our first call on excel was to quickly find the length of the phone number field since it is a large amount of data. 
 
---#SQL Server
- SELECT (Avg(x * y) - (Avg(x) * Avg(y))) / (StDevP(x) * StDevP(y)) AS Pearsons_corr
-  FROM correlation;
+Coming to #SQL, #Microsoft still maintain #LEN() to count the number of characters while PostgreSQL uses #LENGTH. 
+I am putting it here that to count characters in #SQL
+SQL Server - LEN()
+PostgreSQL - LENGTH()
 
---#PostgreSQL
-SELECT 
-  CORR (x, y)
-FROM correlation;
+Just understanding the concept would help you move fast on this journey. 
+  --#SQL Server
+ SELECT 
+	DISTINCT country,
+	LEN(Country) AS 'Country Length'
+FROM dbo.eurovision
+WHERE LEN(Country) > 8;
 
-Currently, how do you calculate correlation coefficient from your end. Let me get your thoughts on the chat box.
+  --#PostgreSQL
+ SELECT 
+	DISTINCT country,
+	LENGTH(Country) AS Country_Length 
+FROM eurovision
+WHERE LENGTH(Country) > 8;
+
+Do you have any reservations and what you would love me to share? Let me get your thoughts on the chat box.
 
 Trust you find this useful. 
 #Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
