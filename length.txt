@@ -1,0 +1,20 @@
+#QUESTION : # Returns the first_name and the length of first_name ( how many characters contain in the first name ) from the employees where the length of first_name is more than 7.
+
+
+--#SQL Server
+ SELECT (Avg(x * y) - (Avg(x) * Avg(y))) / (StDevP(x) * StDevP(y)) AS Pearsons_corr
+  FROM correlation;
+
+--#PostgreSQL
+SELECT 
+  CORR (x, y)
+FROM correlation;
+
+Currently, how do you calculate correlation coefficient from your end. Let me get your thoughts on the chat box.
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
