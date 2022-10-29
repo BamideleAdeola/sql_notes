@@ -1,25 +1,18 @@
-#QUESTION : Calculate the running total
+#QUESTION : Calculate the #running #total or #cumulative #points of game played in eurovision table.
+
+Having used #PowerBI to a great extent, one of my first challenge from client back then was calculating running or cumulative total.
+
 A running total is the summation of a sequence of numbers which is updated each time a number is added to the sequence, 
 by adding the value of the new number to the previous running total.
-
 In a simpler context, a running total, or cumulative sum, is a value that indicates the total of a value in the current row and all rows above it.
+The objective here is just to show at the simpler level of how to use window function to calculate running total with just one line of code.
 
- --#SQL #server 
-
- SELECT 
-	DISTINCT country,
-	LEN(Country) AS 'Country Length'
-FROM dbo.eurovision
-WHERE LEN(Country) > 8;
-
- --#PostgreSQL
- SELECT 
-	DISTINCT country,
-	LENGTH(Country) AS Country_Length 
-FROM eurovision
-WHERE LENGTH(Country) > 8;
-
-Do you have any reservations and what you would love me to share? Let me get your thoughts on the chat box. 
+SELECT
+	id,
+	Country,
+	Points,
+	SUM(Points) OVER (ORDER BY id ASC) AS RunningTotal  -- cumulative addition of points
+FROM eurovision;
 
 Trust you find this useful. 
 #Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
@@ -27,5 +20,3 @@ Trust you find this useful.
 #LinkedIn: https://lnkd.in/dJzSUWQF
 #Twitter: https://lnkd.in/dfPx-c3a
 #microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
-
-I have enjoyed growth working with GDM GROUP Venture Garden Group Garden Ventures Cloud Solutions Partners Society for Corporate Governance Nigeria and many more
