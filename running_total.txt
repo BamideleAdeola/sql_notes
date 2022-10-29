@@ -1,15 +1,9 @@
-#QUESTION : #Return #DISTINCT #country name and its #length (length of country characters) from the envision table where the length of country is more than 8.
-If you are a fan of #excel, the above challenge should not be difficult to attempt.  I worked on a #project  back then where we had to validate beneficiaries phone nos. 
+#QUESTION : Calculate the running total
+A running total is the summation of a sequence of numbers which is updated each time a number is added to the sequence, 
+by adding the value of the new number to the previous running total.
 
-Rasheed AbdulKareem can attest to that. Our first call on #miorosoft #excel was to quickly find the length of the phone number field since it is a large amount of data. Of course it was the #LEN() we used in excel.
+In a simpler context, a running total, or cumulative sum, is a value that indicates the total of a value in the current row and all rows above it.
 
-Coming to #SQL, #Microsoft still maintain #LEN() to count the number of characters while PostgreSQL uses #LENGTH. 
-I am putting it here that to count characters in #SQL
-
-SQL Server - #LEN()
-PostgreSQL - #LENGTH()
-
-Just understanding the concept would help you move fast on this journey. 
  --#SQL #server 
 
  SELECT 
