@@ -1,0 +1,45 @@
+#QUESTION : Replace the NULLs in IncidentState column with values in City Column using #ISNULL() Function
+
+While working on a project, I wrote a query and it threw an error. With that in mind, I decided to make research and came up with the following.
+
+ISNULL is not IS NULL. 
+
+ISNULL() function lets you return an alternative value when an expression is NULL. 
+IS NULL operator list all records that have no values. 
+
+Not to be confused, I went further to see if there are differences between ISNULL and COALESCE function which I will show in another post. 
+So, a column value is NULL if it does not exist. Hence IS NULL operator is used to display all the rows for columns that do not have a value.
+
+For Example: If you want to find the names of students (from a student_register table) who do not participate in any games, the query should be:
+SELECT full_name FROM student_register WHERE games IS NULL;
+Hence, IS NULL is used as a filter while ISNULL can be used to replace COALESCE but beware of performance, its syntax and other conditions.
+
+The objective here is to show that you can use ISNULL to replace null values in a column with values in another column. 
+
+I have shared two screenshots to better understand this. 
+
+The first show the full query without a filter by IS NULL while the second included an IS NULL Operator to filter out only the null rows.
+
+-- Query 1
+SELECT 
+	IncidentState, 
+	ISNULL(IncidentState, City) AS MyNewLocation  -- Replace nulls with values in the City column
+FROM Incidents;
+
+
+-- Query 2
+SELECT 
+	IncidentState, 
+	ISNULL(IncidentState, City) AS MyNewLocation  -- Replace nulls with values in the City column
+FROM Incidents
+-- Filter to only return missing values from IncidentState
+WHERE IncidentState IS NULL;
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+#Medium: https://medium.com/@ajamubamidele_64472/isnull-vs-is-null-which-way-38d419ecd6e9
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
