@@ -1,4 +1,4 @@
-#QUESTION : Replace the NULLs in IncidentState column with values in City Column using #ISNULL() Function
+#QUESTION : #Replace the NULLs in IncidentState column with values in City Column using #ISNULL() Function
 
 While working on a project, I wrote a query and it threw an error. With that in mind, I decided to make research and came up with the following.
 
