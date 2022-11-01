@@ -1,0 +1,38 @@
+#QUESTION : #Return the datepart values of today.
+
+If you have got to work with time series analysis, you will understand the importance of dissecting dates into different parts. 
+The DATEPART() function returns a specific part of a date. It returns an integer which represents a specific part of a date. 
+Sometimes as a data specialist, all you are interested in might be day, month, or a year for trend analysis. The DATEPART() Function comes handy here.
+Please view the different syntax parts of a datepart here : https://learn.microsoft.com/en-us/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver16 
+
+For date, DATEPART will accept a column expression, expression, string literal, or user-defined variable. 
+Use four-digit years to avoid ambiguity issues. 
+
+In next post, I will write on DATENAME() function which is similar to DATEPART(). 
+
+I have Declared a variable called my currentdate with a DATETIME(2) datatype and assigned it to GETDATE() which is the current datetime value and a string output.
+
+Surprisngly, today is day #304 of the year, isn't that great? 
+
+DECLARE
+	@mycurrentdate DATETIME2(7) = GETDATE();  -- MY CURRENT DATE AT THE TIME OF THIS QUERY
+
+SELECT
+	DATEPART(YEAR, @mycurrentdate) AS TheYear,
+	DATEPART(MONTH, @mycurrentdate) AS TheMonth,
+	DATEPART(DAY, @mycurrentdate) AS TheDay,
+	DATEPART(DAYOFYEAR, @mycurrentdate) AS TheDayOfYear,
+    -- Day of week is WEEKDAY
+	DATEPART(WEEKDAY, @mycurrentdate) AS TheDayOfWeek,
+	DATEPART(WEEK, @mycurrentdate) AS TheWeek,
+	DATEPART(SECOND, @mycurrentdate) AS TheSecond,
+	DATEPART(NANOSECOND, @mycurrentdate) AS TheNanosecond;
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+Medium: https://medium.com/@ajamubamidele_64472/challenge-return-the-datepart-values-of-today-28bed747e5e6
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
