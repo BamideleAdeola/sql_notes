@@ -1,0 +1,50 @@
+#QUESTION : 
+1. #Find 45 days from today. 
+2. Considering our expected ship date is 20 days after a completed order, find the expected ship date.
+
+#SQL #DATEADD() Function
+
+If you work in the Logistics service sector, you would know that there is an average days a need needs to be shipped.
+
+This gives rise to adding these days to the order date which is generated immediately a proposed buyer completes his/her order. 
+
+In that context, DATEADD can adds or subtracts a number to a datepart of an input date and returns the date.
+
+SYNTAX:
+DATEADD (datepart , number , date )
+
+Using the Northwind database with some random business case of 20 days benchmark for orders to be shipped
+
+-- Query 1
+SELECT 
+  DATEADD(day, 45, getdate()) AS FourtyFiveDaysFromNow; -- 45 Days from today is 2022-12-18 07:53:30.110
+GO
+
+-- Query 2
+SELECT 
+    Orderid,
+	OrderDate,
+	DATEADD(DAY, 20, OrderDate) As ProposedShipeddate, -- 20 Days plus OrderDate
+	ShippedDate,
+	DATEDIFF(DAY, DATEADD(DAY, 20, OrderDate), ShippedDate) AS DaysDue
+FROM dbo.orders;
+GO
+
+On the eye level, the output shows that at 10302 had an extra 9 days after the 20 days benchmark and order 10305 had 6. 
+
+Every other orders with a negative DaysDue were shipped earlier than the ProposedShippedDate.
+
+We can then move forward to drill down into what could have caused delay in shippment. 
+
+#NOTE: On a second note, wouldn't have been better to remove weekends from these days? Checkout for my next post on this.
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
+
+
+google, google data studio, Microsoft excel, Microsoft power bi, Power BI Developer, LinkedIn, Sales, Management, God, Jobs, Sponsorship, UK, United Kingdom, google data studio, AWS, Cloud, Azure, Azure Synapse, SQL, Learning and Development, Recruitment 
