@@ -1,0 +1,41 @@
+#QUESTION : #How many months, days, hours, minutes and seconds to end the year from today. #SQL #DATEDIFF() Function
+
+Most times we always want to keep track of differences between two dates. e.g to find one's age, we need birthdate and currentdate. 
+
+Life itself is about comparison. So is our growth. There is always a benchmark. You will hear budget and actual which is also one sort of comparison.
+
+A very cool function that helps in solving for this issue of date comparison or difference is the DATEDIFF() Function. 
+
+I have used this function in #PowerBI and other business intelligence tools which I thought to put it out in writing.
+
+The function returns the difference between two date value in specified datepart. One could specify the difference to be in #Year,
+#Quarter, #month, etc, Depending on your use case. 
+
+For our use case, I have declared a variable called @yearend with a DATETIME data type and assigned the string '2022-12-31 23:59:59'
+
+DECLARE @yearend DATETIME = '2022-12-31 23:59:59';
+
+SELECT 
+	DATEDIFF(MONTH,GETDATE(),@yearend) AS Monthsleft,
+	DATEDIFF(DAY,GETDATE(),@yearend) AS Daysleft,
+	DATEDIFF(HOUR,GETDATE(),@yearend) AS Hoursleft,
+	DATEDIFF(MINUTE,GETDATE(),@yearend) AS Minutessleft,
+	DATEDIFF(SECOND,GETDATE(),@yearend) AS Secondsleft;
+
+This query shows that at the moment of writing this post, there is approximately 1 month equivalent to 59 days left in this year. 
+
+I hope you are able to make valuable learning plans for the remaining days of the year to close the year strong. 
+
+Be deliberate about your learning, you can do it. Consistency is the key
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+Note: Would share a #PowerBI Version of this post Later
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
+
+
+google, google data studio, Microsoft excel, Microsoft power bi, Power BI Developer, LinkedIn, Sales, Management, God, Jobs, Sponsorship, UK, United Kingdom, google data studio, AWS, Cloud, Azure, Azure Synapse, SQL, Learning and Development, Recruitment 
