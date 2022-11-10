@@ -1,0 +1,29 @@
+OLTP and OLAP
+OLTP - For transactional processing
+OLAP - For Analytical processing
+
+Data Warehouse - OLAP
+Amazon 		- REDSHIFT
+Microsoft 	-  Azure SQL Data Warehouse
+Google 		- Big query
+
+Data Marts
+- Subset of data warehouses
+- Dedicated to a specific topic
+
+Data Lakes
+- Store all types of data at a lower cost
+- Retains all data and can take up petabytes (1000 terabytes)
+- Schema-on-read as opposed to schema-on-write
+- Need to catalog data otherwise becomes a data swamp
+- Apache Spark and Hadoop
+
+ETL and ELT will tell how data gets to warehouse
+
+ETL
+ELT - This gets to a datalake first 
+
+DATA MODELLING
+-Process of creating a data mode for the data to be stored
+--Tools: Data structure diagrams e.g entity-relational diagrams and UML diagrams
+
