@@ -1,0 +1,63 @@
+#QUESTION : #Retrieve the century of date of births from the table centdata.
+
+
+
+I hope you know that 19th (nineteenth) century began on 1 January 1801, and ended on 31 December 1900. I knew later in my career actually too actually. Sure that a lot would know this. However, how do we confirm what century a date is? That is the main challenge in this write up. 
+
+
+
+Generally speaking, a century is a period of 100 years. However, it is worthy of note that we can retrieve the centuries of dates from SQL in different ways.
+
+
+
+All it takes is to understand some simple mathematical concept. 
+
+
+
+I have displayed two approaches to solving this issue on the snapshot. 
+
+ 
+
+First approach is to subtract 1 from the Year of birth, divide the result by 100 then add the output to 1. This follows the rule of BODMAS. 
+
+
+
+Second approach subtracts the lower and upper limit of the century e.g 2000 - 1901 which is 20th century and is definitely 99, add it to the year of birth then divide the result by 100.
+
+
+
+SELECT 
+
+	id,
+
+	date_of_birth,
+
+	1 + (YEAR(date_of_birth) - 1)/100 AS century1,
+
+	(YEAR(date_of_birth) + 99) / 100 as century2
+
+FROM centdata;
+
+
+
+It is important to mention that SUBSTRING could also be used to achieve this output. 
+
+
+
+Let me know in the comment box which of these two approach you find straight forward and easy to use. 
+
+
+
+Trust you find this useful. 
+
+#Cavaet: Keep #learning, one step at a time. 
+
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+
+#LinkedIn: https://lnkd.in/dJzSUWQF
+
+#Twitter: https://lnkd.in/dfPx-c3a
+
+
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
