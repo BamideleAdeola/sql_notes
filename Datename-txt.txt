@@ -1,0 +1,64 @@
+#QUESTION : #Return the datepart values of today.
+
+Based on my last post on Datepart function, today we will look into the other variant of the function which is DATENAME() function.
+If you intend to return a specific part of a date in string, then use DATENAME. 
+
+While DATEPART returns Integer, DATENAME returns a string. 
+
+Please view the different syntax parts of a datename and datepart here respectively : 
+https://learn.microsoft.com/en-us/sql/t-sql/functions/datename-transact-sql?view=sql-server-ver16
+https://learn.microsoft.com/en-us/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver16 
+
+For date, DATENAME and DATEPART will accept a column expression, expression, string literal, or user-defined variable. 
+Use four-digit years to avoid ambiguity issues. 
+
+
+I have Declared 2 variables called my currentdate1 and  currentdate2 with a DATETIME(2) datatype and assigned it to GETDATE() which is the current datetime value and a string output.
+
+currentdate1 to explain the output of DATEPART() Function
+currentdate2 to explain the output of DATENAME() Function
+
+#OBSERVATION: Both DATEPART and DATENAME returns similar values in all columns apart from the MONTH and DayoftheWeek columns.
+
+-- Query 1
+
+DECLARE
+	@mycurrentdate1 DATETIME2(7) = GETDATE();  -- MY CURRENT DATE AT THE TIME OF THIS QUERY for dateoart
+
+SELECT
+	DATEPART(YEAR, @mycurrentdate1) AS TheYear,
+	DATEPART(MONTH, @mycurrentdate1) AS TheMonth,
+	DATEPART(DAY, @mycurrentdate1) AS TheDay,
+	DATEPART(DAYOFYEAR, @mycurrentdate1) AS TheDayOfYear,
+    -- Day of week is WEEKDAY
+	DATEPART(WEEKDAY, @mycurrentdate1) AS TheDayOfWeek,
+	DATEPART(WEEK, @mycurrentdate1) AS TheWeek,
+	DATEPART(SECOND, @mycurrentdate1) AS TheSecond,
+	DATEPART(NANOSECOND, @mycurrentdate1) AS TheNanosecond;
+
+-- Query 2
+
+DECLARE
+	@mycurrentdate2 DATETIME2(7) = GETDATE();    --MY CURRENT DATE AT THE TIME OF THIS QUERY for datename
+SELECT
+	DATENAME(YEAR, @mycurrentdate2) AS TheYear,
+	DATENAME(MONTH, @mycurrentdate2) AS TheMonth,
+	DATENAME(DAY, @mycurrentdate2) AS TheDay,
+	DATEPART(DAYOFYEAR, @mycurrentdate2) AS TheDayOfYear,
+    -- Day of week is WEEKDAY
+	DATENAME(WEEKDAY, @mycurrentdate2) AS TheDayOfWeek,
+	DATENAME(WEEK, @mycurrentdate2) AS TheWeek,
+	DATENAME(SECOND, @mycurrentdate2) AS TheSecond,
+	DATENAME(NANOSECOND, @mycurrentdate2) AS TheNanosecond;
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+Medium: https://medium.com/@ajamubamidele_64472/distinction-between-datepart-vs-datename-sql-server-approach-9444500cab44
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
+
+
+google, google data studio, Microsoft excel, Microsoft power bi, Power BI Developer, LinkedIn, Sales, Management, God, Jobs, Sponsorship, UK, United Kingdom, google data studio, AWS, Cloud, Azure, Azure Synapse, SQL, Learning and Development, Recruitment 
