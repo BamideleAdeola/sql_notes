@@ -1,0 +1,36 @@
+#QUESTION : /* Find Average total_votes of all voters residing in France, Germany and Switzerland by customer_id and country.
+*/
+
+#SQL can be fun with aggregate functions. 
+The above challenge on average votes by customer_id and country definitely requires a GROUP BY statement. 
+Also, including ordering statement with the query just for a simple clarification.
+Trust you know that you can order by digits accordingly. 
+Instead of calling the names of columns, you could just input numbers as seen below. 
+Just that non technical people might not understand this or what do you think?
+1 represent the first column in the select statement and 2, the second, etc.
+
+
+Query 1
+SELECT customer_id, country, AVG(total_votes) AS avg_votes
+FROM voters
+WHERE country IN ('France', 'Germany', 'Switzerland') 
+GROUP BY customer_id, country
+ORDER BY customer_id, country;
+
+
+Query 2
+SELECT customer_id, country, AVG(total_votes) AS avg_votes
+FROM voters
+WHERE country IN ('France', 'Germany', 'Switzerland') 
+GROUP BY customer_id, country
+ORDER BY 1, 2;
+
+Feel free to drop other ways of solving same challenge.
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
