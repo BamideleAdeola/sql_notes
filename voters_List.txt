@@ -1,0 +1,31 @@
+#QUESTION : /* Total Votes
+Retrieve a list of voters in voters table having a total_votes 
+greater than 100 per vote and in Denmark, USA and United Kingdom. 
+Sort your result by ascending customer_id.
+*/
+
+Filtering datasets to what is necessary or business case is most times what a data specialist is faced with. 
+Also, understanding some little changes in query can help. It is good to call out the IN function here. 
+The IN functions help in solving several OR function or use case. So instead of writing several OR functions, 
+you can wrap it in an IN function and specify the country once as shown below.
+
+SELECT 
+  customer_id,
+  first_name,
+  last_name,
+  total_votes,
+  country
+FROM voters
+WHERE total_votes > 100
+AND country IN ('Denmark', 'USA', 'United Kingdom')
+ORDER BY customer_id;
+
+Feel free to drop other ways of solving same challenge.
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
