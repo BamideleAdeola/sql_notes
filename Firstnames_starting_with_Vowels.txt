@@ -1,0 +1,37 @@
+#QUESTION : #Retrieve voters firstname starting with vowels (a,e,i,o,u) from voters table.
+
+As a data specialist, understanding string functions is of high importance. 
+
+In solving the issue above, your ability to critically dissect, digest and bisect the challenge will come to play here. 
+
+Most often, some challenges warrant that you breakdown the question into smaller parts, then recouple it. 
+
+For the above challenge, I have provided 3 queries using 3 different approaches;
+1. Wildcard
+2. Left
+3. SUbstring
+
+--Query 1 -- using wildcard function
+SELECT DISTINCT first_name
+FROM voters
+WHERE first_name LIKE '[a,e,i,o,u]%';
+
+--Query 2 -- Using left function
+SELECT DISTINCT first_name
+FROM voters
+WHERE LEFT (first_name, 1) IN ('a','e','i','o','u');
+
+--Query 3 -- Using substring function
+SELECT DISTINCT first_name
+FROM voters
+WHERE SUBSTRING(first_name, 1, 1) IN ('a','e','i','o','u');
+
+Feel free to try it out with any string data and see if you are able to come up with required output.
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
