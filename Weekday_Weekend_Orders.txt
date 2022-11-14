@@ -1,0 +1,42 @@
+#QUESTION : #Retrieve Weekday orders and Weekend Orders From Adventure2019 Database
+
+According to international standard ISO 8601, Monday is the first day of the week. 
+It is followed by Tuesday, Wednesday, Thursday, Friday, and Saturday. Sunday is the 7th and last day of the week.
+By default in the business parlance, Saturdays and Sundays are regarded as weekends. So, weekend depends on your language or region.
+
+Wearing the hat of a sales manager, I intend to divide my orders into WEEKEND ORDERS and WEEKDAY orders.
+
+This might seem simple right, YES, you can use the DATENAME() function and a WHERE CLAUSE to quickly achieve this. 
+
+My current date using a GETDATE() function returned FRIDAY, so I do not need to set any day or language.
+
+To solve this challenge, I am using #AdventureWorks2019 database. If you do not have it, I could write a new post on how to load it in #SSMS some other time.
+
+
+--Query 1: Weekend Orders
+SELECT 
+  SalesOrderID,
+  OrderQty,
+  DATENAME(dw, ModifiedDate) AS WeekendOrder
+FROM Sales.SalesOrderDetail
+WHERE DATENAME(dw, ModifiedDate) IN ('Saturday', 'Sunday');
+go
+
+--Query 2: Weekday Orders
+SELECT 
+  SalesOrderID,
+  OrderQty,
+  DATENAME(dw, ModifiedDate) AS WeekdayOrder
+FROM Sales.SalesOrderDetail
+WHERE DATENAME(dw, ModifiedDate) NOT IN ('Saturday', 'Sunday');
+go
+
+I will write on another way of achieving this challenge in another post. 
+
+Trust you find this useful. 
+#Cavaet: There are other ways of solving this. Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
