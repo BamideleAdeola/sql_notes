@@ -1,0 +1,26 @@
+#QUESTION : Retrieve a list of first and last names of voters with an even customer_id number. 
+Exclude duplicates from the output.
+
+To solve the challenge above, one should have idea of modulus function. 
+
+I have seen developers used modulus in different applications. 
+
+Modulus returns the remainder of one number divided by another. MYSQL, PostgreSQL have the function as MOD().
+
+However, in SQL Server with the %, we can call the MOD Function. 
+
+SELECT 
+  DISTINCT  customer_id, first_name, last_name
+FROM voters
+WHERE customer_id % 2 = 0; -- remainder 0 for even numbers
+
+
+Feel free to drop other ways of solving same challenge.
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
