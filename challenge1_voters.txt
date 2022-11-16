@@ -1,0 +1,37 @@
+#QUESTION : 
+/*
+Pull all columns for the voter(s) who matches the following criteria:
+- First_name contains  'a' after the first two letters.
+- Male gender 'M'
+- Born in February, June, or December
+- Total votes between 50 and 130
+- customer_id is an odd number
+- Having a country of 'Switzerland' 
+*/
+
+The beauty of SQL is seen when you breakdown challenge or questions into smaller units as seen above. 
+The query test several skills within SQL. 
+1. Wildcards
+2. date manipulations
+3. The between operator
+4. even/odd no manipulations or modulus
+etc. 
+
+SELECT * 
+FROM voters 
+WHERE first_name  LIKE '__a%'
+ AND gender = 'M'
+ AND month(birthdate) IN (2, 6, 12)
+ AND total_votes BETWEEN 50 AND 130
+ AND customer_id % 2 = 1
+ AND (country = 'Switzerland');	
+
+Feel free to drop other ways of solving same challenge. How would you have solve this?
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
