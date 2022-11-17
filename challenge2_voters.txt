@@ -1,0 +1,36 @@
+#QUESTION : 
+ /* CHALLENGE
+Show all of the voters grouped into voting_group of their total_votes.
+Show the total no of voters in each voting_group.
+Order the list by the vote_group in decending Order.
+
+e.g, if total vote is between 10 to 19 they should fall in voting_group 10, 
+20-29 = voting_group 20, 100-109 = voting_group 100 , etc.
+ */
+
+In solving the above challenge, understanding the floor() function is of importance. 
+The FLOOR() function returns the largest integer value that is smaller than or equal to a number.
+Hence, dividing the total votes into groups of 10 would mean that you divide the vote by 10, 
+floor it to remove the decimal parts of the output then multiply the outcome by 10 since it has to be grouped in tens.
+
+e.g votes of 185/10 = 18.5
+when you floor 18.5, output would be 18 (removing the decimal parts)
+then you can multiple the output by 10 which will group 185 as 180. 
+
+SELECT 
+  FLOOR(total_votes / 10) * 10 AS voting_group,
+  COUNT(*) AS voters_in_each_group
+FROM voters
+GROUP BY FLOOR(total_votes / 10) * 10
+ORDER BY voting_group DESC;
+
+
+Feel free to drop other ways of solving same challenge. How would you have solve this?
+
+Trust you find this useful. 
+#Cavaet: #The #data is #fictitious and not a real dataset.
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
