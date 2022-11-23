@@ -1,0 +1,33 @@
+#QUESTION : 
+ /* CHALLENGE
+-- Retrieve first orderdate of each Mixid and clean the date approprately.
+ */
+
+Just as simple as it were. First orderdate can be resolved with MIN function. 
+Since that is an aggregate function, there is need for Group By Clause if we intend to split it by rows. 
+The challenge also test your data wrangling ability with regards to date. 
+The Cast function was employed to convert the date in text to datetime datatype.
+ 
+-- Query 1 - Without cleaning
+SELECT 
+	MixId,
+	MIN(OrderDate) AS first_orderdate
+FROM shipments
+GROUP BY MixId;
+
+-- Query 2 - Cast date
+SELECT 
+	MixId,
+	CAST(MIN(OrderDate) AS DATETIME) AS first_orderdate
+FROM shipments
+GROUP BY MixId;
+
+Feel free to drop other ways of solving same challenge. How would you have solve this?
+
+Trust you find this useful. 
+#Cavaet: #The #data is #fictitious and not a real dataset.
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
