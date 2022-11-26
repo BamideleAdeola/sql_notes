@@ -1,0 +1,60 @@
+#QUESTION : #Count the number of Sundays till date
+
+Attimes, we might want to count the numbers of sundays so far in the year. 
+
+This was one of the discussion with my friend today and I thought of using #SQL to solve the problem. 
+
+Yes, I declared the start date as '2022-01-01' and use the GETDATE() function for the end date. 
+
+Also, with Common Table Expression (CTE) just to create a new table of all sundays from beginning of the year using the UNION ALL function. 
+
+I also used the DATEADD function to create an incremental date from '2022-01-01' to less than or equal to current period (GETDATE()) Function.
+
+Definitely, there are other ways of solving this challenge, I find this a bit straight forward. 
+
+Have you ever worked on something like this before, please feel free to drop in the comment to continue learning.
+
+It happened that today is the #45th sunday in the year 2022. And the first Sunday in 2022 was the 2nd of January, 2022 as shown in the snapshot.
+
+Query1: -- The count of Sundays till date
+DECLARE @startdate datetime = '2022-01-01';
+DECLARE @enddate datetime = GETDATE(); -- Set the start and enddate
+
+WITH Date_table(mydates) AS (
+SELECT @startdate		
+UNION ALL							
+SELECT DATEADD(DAY, 1, mydates) FROM Date_table 
+WHERE mydates <= @enddate
+)
+
+SELECT COUNT(mydates) AS No_of_Sundays
+FROM Date_table 
+WHERE DATENAME(WEEKDAY, mydates) IN ('Sunday')
+OPTION (MAXRECURSION 0);
+
+
+Query 2: Dates of Sundays in this year
+
+DECLARE @startdate datetime = '2022-01-01';
+DECLARE @enddate datetime = GETDATE(); -- Set the start and enddate
+
+WITH Date_table(mydates) AS (
+SELECT @startdate				
+UNION ALL							
+SELECT DATEADD(DAY, 1, mydates) FROM Date_table  --Increment each day till current date
+WHERE mydates <= @enddate
+)
+
+SELECT mydates AS Dates_of_Sundays
+FROM Date_table 
+WHERE DATENAME(WEEKDAY, mydates) IN ('Sunday')
+OPTION (MAXRECURSION 0);
+
+
+Trust you find this useful. 
+#Cavaet: Keep #learning, one step at a time. 
+#Follow, #share, #comment and #like to help someone somewhere. We are in this journey together.
+#LinkedIn: https://lnkd.in/dJzSUWQF
+#Twitter: https://lnkd.in/dfPx-c3a
+
+#microsoftazure #microsoftpowerbi #microsoft #googleanalytics #dataanalytics #datacamp #dataarchitect
